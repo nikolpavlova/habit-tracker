@@ -1,0 +1,21 @@
+
+import json
+
+habits = []
+
+while True:
+    
+    habit_name = input("Enter a habit (or 'q' to quit): ").strip()
+
+    if habit_name.lower() == 'q':
+        break
+    
+   
+    habits.append(habit_name)
+
+with open('habits.json', mode='w') as file:
+    
+    json.dump(habits, file, indent=4)  
+
+
+print("Habits saved to habits.json successfully.")
